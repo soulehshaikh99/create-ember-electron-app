@@ -17,7 +17,7 @@ The boilerplate code to get started creating Cross-platform Desktop Apps with El
 
 ## ✒️ Overview
 
-The aim of this project is to provide Web Developers using `aurelia` the power to create cross-platform desktop apps using `electron`.
+The aim of this project is to provide Web Developers using `ember` the power to create cross-platform desktop apps using `electron`.
 
 #### 🧐 What packages does the project use?
 
@@ -27,7 +27,7 @@ The aim of this project is to provide Web Developers using `aurelia` the power t
 
 **`electron-serve`** is used for Static file serving for Electron apps.
 
-**`aurelia`** is an amazing framework that embraces simple and clean code without sacrificing power. Aurelia's standards-based, unobtrusive style makes it the only framework that empowers you to build components using vanilla JavaScript or TypeScript. At the core of Aurelia is a high-performance, reactive system, capable of batching DOM updates in a way that leaves other frameworks, and their virtual DOMs, in the dust. Experience consistent, scalable performance, no matter how complex your UI.
+**`ember`** is a framework for ambitious web developers. Ember.js is a productive, battle-tested JavaScript framework for building modern web applications. It includes everything you need to build rich UIs that work on any device. Ember’s out-of-the-box experience has everything you need to start building on day one and keep shipping for years. Ember is built on the Glimmer rendering engine, one of the fastest rendering technologies on the market today, thanks to the way it compiles templates down to a highly-performant virtual machine. Due to our holistic performance approach, performance upgrades are often free with version upgrades— no extra work necessary!
 
 **`concurrently`** is used to run multiple commands concurrently.
 
@@ -45,14 +45,14 @@ But I strongly recommend using <em>yarn</em> as it is a better choice when compa
 # Clone the Project
 
 # Use degit scaffolding tool
-$ npx degit soulehshaikh99/create-aurelia-electron-app create-aurelia-electron-app
+$ npx degit soulehshaikh99/create-ember-electron-app create-ember-electron-app
 # or GitHub CLI Users
-$ gh repo clone https://github.com/soulehshaikh99/create-aurelia-electron-app.git
+$ gh repo clone https://github.com/soulehshaikh99/create-ember-electron-app.git
 # or Normal Git Users
-$ git clone https://github.com/soulehshaikh99/create-aurelia-electron-app.git
+$ git clone https://github.com/soulehshaikh99/create-ember-electron-app.git
 
 # Switch location to the cloned directory
-$ cd create-aurelia-electron-app
+$ cd create-ember-electron-app
 
 # Install dependencies
 $ yarn # or npm install
@@ -66,119 +66,103 @@ $ yarn electron-pack # or npm run electron-pack
 
 ### 💫 Create this boilerplate from scratch (Manual Setup)
 
-#### 1) Start by installing aurelia-cli globally
+#### 1) Start by cloning `ember-learn/super-rentals` project as ember template project
 
 ```bash
-$ yarn global add aurelia-cli
-# npm i -g aurelia-cli
+# Use degit scaffolding tool
+$ npx degit ember-learn/super-rentals create-ember-electron-app
+# or GitHub CLI Users
+$ gh repo clone https://github.com/ember-learn/super-rentals.git
+# or Normal Git Users
+$ git clone https://github.com/ember-learn/super-rentals.git
 ```
 
-#### 2) Create a aurelia project using aurelia-cli
+#### 2) Switch to project directory
 
 ```bash
-$ au new create-aurelia-electron-app
+$ cd create-ember-electron-app
 ```
 
-#### 3) Switch to project directory
+#### 3) Install Dependencies
 
 ```bash
-$ cd create-aurelia-electron-app
+$ yarn # npm install
 ```
 
-#### 5) Install Development Dependencies
+#### 4) Install Development Dependencies
 
 ```bash
 $ yarn add --dev electron electron-builder wait-on concurrently
 # npm i -D electron electron-builder wait-on concurrently
 ```
 
-#### 6) Install Production Dependency
+#### 5) Install Production Dependency
 
 ```bash
 $ yarn add electron-serve # or npm i electron-serve
 ```
 
-#### 7) Your dependencies should look something like this
+#### 6) Your dependencies should look something like this
 
 ```json
 "dependencies": {
   "electron-serve": "^1.0.0"
 },
 "devDependencies": {
-  "@babel/core": "^7.11.1",
-  "@babel/plugin-proposal-class-properties": "^7.10.4",
-  "@babel/plugin-proposal-decorators": "^7.10.5",
-  "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-  "@babel/preset-env": "^7.11.0",
-  "@babel/register": "^7.10.5",
-  "app-settings-loader": "^1.0.6",
-  "aurelia-animator-css": "^1.0.4",
-  "aurelia-bootstrapper": "^2.3.3",
-  "aurelia-cli": "^2.0.0",
-  "aurelia-loader-nodejs": "^1.1.0",
-  "aurelia-pal-nodejs": "^2.0.0",
-  "aurelia-testing": "^1.0.0",
-  "aurelia-webpack-plugin": "^4.0.0",
+  "@ember/optional-features": "^2.0.0",
+  "@glimmer/component": "^1.0.1",
+  "@glimmer/tracking": "^1.0.1",
   "babel-eslint": "^10.1.0",
-  "babel-jest": "^26.3.0",
-  "babel-loader": "^8.1.0",
-  "babel-plugin-istanbul": "^6.0.0",
-  "clean-webpack-plugin": "^3.0.0",
+  "broccoli-asset-rev": "^3.0.0",
   "concurrently": "^5.3.0",
-  "copy-webpack-plugin": "^6.0.3",
-  "css-loader": "^4.2.1",
-  "duplicate-package-checker-webpack-plugin": "^3.0.0",
   "electron": "^10.1.1",
   "electron-builder": "^22.8.0",
-  "eslint": "^7.7.0",
-  "expose-loader": "^1.0.0",
-  "file-loader": "^6.0.0",
-  "gulp": "^4.0.2",
-  "gulp-eslint": "^6.0.0",
-  "html-loader": "^1.1.0",
-  "html-webpack-plugin": "^4.3.0",
-  "istanbul-instrumenter-loader": "^3.0.1",
-  "jest": "^26.4.0",
-  "jest-cli": "^26.4.0",
-  "jest-transform-stub": "^2.0.0",
-  "json-loader": "^0.5.7",
-  "mini-css-extract-plugin": "^0.10.0",
-  "minimatch": "^3.0.4",
-  "promise-polyfill": "^8.1.3",
-  "regenerator-runtime": "^0.13.7",
-  "style-loader": "^1.2.1",
-  "tree-kill": "^1.2.2",
-  "url-loader": "^4.1.0",
-  "wait-on": "^5.2.0",
-  "webpack": "^4.44.1",
-  "webpack-bundle-analyzer": "^3.8.0",
-  "webpack-cli": "^3.3.12",
-  "webpack-dev-server": "^3.11.0"
+  "ember-auto-import": "^1.6.0",
+  "ember-cli": "~3.21.0",
+  "ember-cli-app-version": "^3.2.0",
+  "ember-cli-babel": "^7.22.1",
+  "ember-cli-dependency-checker": "^3.2.0",
+  "ember-cli-htmlbars": "^5.3.1",
+  "ember-cli-inject-live-reload": "^2.0.2",
+  "ember-cli-sri": "^2.1.1",
+  "ember-cli-uglify": "^3.0.0",
+  "ember-data": "~3.21.0",
+  "ember-export-application-global": "^2.0.1",
+  "ember-fetch": "^8.0.2",
+  "ember-load-initializers": "^2.1.1",
+  "ember-maybe-import-regenerator": "^0.1.6",
+  "ember-qunit": "^4.6.0",
+  "ember-resolver": "^8.0.2",
+  "ember-source": "~3.21.1",
+  "ember-template-lint": "^2.11.0",
+  "ember-welcome-page": "^4.0.0",
+  "eslint": "^7.8.0",
+  "eslint-plugin-ember": "^8.13.0",
+  "eslint-plugin-node": "^11.1.0",
+  "loader.js": "^4.7.0",
+  "npm-run-all": "^4.1.5",
+  "qunit-dom": "^1.4.0",
+  "wait-on": "^5.2.0"
 }
 ```
 
-#### 8) Download the app icon
+#### 7) Download the app icon
 
-[favicon.png](https://raw.githubusercontent.com/soulehshaikh99/assets/master/framework-icons/aurelia/favicon.png) and place it in the static directory.
+[favicon.png](https://raw.githubusercontent.com/soulehshaikh99/assets/master/framework-icons/ember/favicon.png) and place it in the public/assets/images directory.
 
-#### 9) Add `output` configuration in `aurelia_project/aurelia.json`
+#### 8) Add `output-path` configuration in `.ember-cli`
 
 ```bash
-# aurelia_project/aurelia.json
-# This will make sure that the electron-builder and aurelia-cli
+# .ember-cli
+# This will make sure that the electron-builder and ember-cli
 # has seperate directories for output.
 {
-  ...
-  ...
-  "platform": {
-    ...
-    ...
-    "output": "build"
-  }
+  ..
+  "output-path": "build"
 }
 ```
 
-#### 10) Create main.js file (serves as entry point for Electron App's Main Process)
+#### 9) Create main.js file (serves as entry point for Electron App's Main Process)
 
 ```bash
 # Windows Users
@@ -189,111 +173,122 @@ $ fsutil file createnew main.js 0
 $ touch main.js
 ```
 
-#### 11) Paste the below code in main.js file
+#### 10) Paste the below code in main.js file
 
 ```js
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require("electron");
-const path = require("path");
-const serve = require("electron-serve");
-const loadURL = serve({ directory: "build" });
+const { app, BrowserWindow, dialog } = require('electron');
+const path = require('path');
+const serve = require('electron-serve');
+const loadURL = serve({ directory: 'build' });
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
 function isDev() {
-  return !app.isPackaged;
+    return !app.isPackaged;
 }
 
 function createWindow() {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true,
-    },
-    // Use this in development mode.
-    icon: isDev()
-      ? path.join(process.cwd(), "static/favicon.png")
-      : path.join(__dirname, "build/favicon.png"),
-    // Use this in production mode.
-    // icon: path.join(__dirname, 'build/favicon.png'),
-    show: false,
-  });
+    // Create the browser window.
+    mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+            nodeIntegration: true
+        },
+        // Use this in development mode.
+        icon: isDev() ? path.join(process.cwd(), 'public/assets/images/favicon.png') : path.join(__dirname, 'assets/images/favicon.png'),
+        // Use this in production mode.
+        // icon: path.join(__dirname, 'assets/images/favicon.png'),
+        show: false
+    });
 
-  // This block of code is intended for development purpose only.
-  // Delete this entire block of code when you are ready to package the application.
-  if (isDev()) {
-    mainWindow.loadURL("http://localhost:8080/");
-  } else {
-    loadURL(mainWindow);
-  }
+    // This block of code is intended for development purpose only.
+    // Delete this entire block of code when you are ready to package the application.
+    if (isDev()) {
+        mainWindow.loadURL('http://localhost:4200/');
+    } else {
+        loadURL(mainWindow);
+    }
+    
+    // Uncomment the following line of code when app is ready to be packaged.
+    // loadURL(mainWindow);
 
-  // Uncomment the following line of code when app is ready to be packaged.
-  // loadURL(mainWindow);
+    // Open the DevTools and also disable Electron Security Warning.
+    // process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = true;
+    // mainWindow.webContents.openDevTools();
 
-  // Open the DevTools and also disable Electron Security Warning.
-  // process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = true;
-  // mainWindow.webContents.openDevTools();
+    // Emitted when the window is closed.
+    mainWindow.on('closed', function () {
+        // Dereference the window object, usually you would store windows
+        // in an array if your app supports multi windows, this is the time
+        // when you should delete the corresponding element.
+        mainWindow = null
+    });
 
-  // Emitted when the window is closed.
-  mainWindow.on("closed", function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null;
-  });
-
-  // Emitted when the window is ready to be shown
-  // This helps in showing the window gracefully.
-  mainWindow.once("ready-to-show", () => {
-    mainWindow.show();
-  });
+    // Emitted when the window is ready to be shown
+    // This helps in showing the window gracefully.
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.show()
+    });
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on("ready", createWindow);
+app.on('ready', createWindow);
 
 // Quit when all windows are closed.
-app.on("window-all-closed", function () {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== "darwin") app.quit();
+app.on('window-all-closed', function () {
+    // On macOS it is common for applications and their menu bar
+    // to stay active until the user quits explicitly with Cmd + Q
+    if (process.platform !== 'darwin') app.quit()
 });
 
-app.on("activate", function () {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) createWindow();
+app.on('activate', function () {
+    // On macOS it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (mainWindow === null) createWindow()
 });
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 ```
 
-#### 12) Update the script section of `package.json`
+#### 11) Update the script section of `package.json`
 
 ```bash
 # Add this scripts
-"electron": "wait-on http://localhost:8080 && electron .",
-"electron-dev": "concurrently \"yarn run start\" \"yarn run electron\"",
+"electron": "wait-on http://localhost:4200 && electron .",
+"electron-dev": "concurrently \"yarn start\" \"yarn electron\"",
 "preelectron-pack": "yarn build",
 "electron-pack": "electron-builder"
 
 # You should end up with something similar
 "scripts": {
-  "build": "webpack --env.production --extractCss",
-  "start": "webpack-dev-server --extractCss",
-  "build:dev": "webpack --extractCss",
-  "analyze": "webpack --env.production --analyze",
-  "test": "au test",
-  "electron": "wait-on http://localhost:8080 && electron .",
-  "electron-dev": "concurrently \"yarn run start\" \"yarn run electron\"",
+  "build": "ember build --environment=production",
+  "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
+  "lint:hbs": "ember-template-lint .",
+  "lint:js": "eslint .",
+  "start": "ember serve",
+  "test": "npm-run-all lint:* test:*",
+  "test:ember": "ember test",
+  "electron": "wait-on http://localhost:4200 && electron .",
+  "electron-dev": "concurrently \"yarn start\" \"yarn electron\"",
   "preelectron-pack": "yarn build",
   "electron-pack": "electron-builder"
+}
+```
+
+#### 12) Delete `directory` configuration from `package.json`
+
+**Note:** delete this entry from package.json as it collides with electron-builder configuration.
+
+```bash
+"directories": {
+  "doc": "doc",
+  "test": "tests"
 }
 ```
 
@@ -302,10 +297,11 @@ app.on("activate", function () {
 **Note:** build configuration is used by electron-builder, modify it if you wish to add more packaging and native distribution options for different OS Platforms.
 
 ```bash
+"name": "create-ember-electron-app", # default is super-rentals
 "main": "main.js",  # Application Entry Point, please verify entry point is set to main.js
 "build": {
-  "icon": "static/favicon.png",
-  "productName": "Aurelia and Electron App",
+  "icon": "public/assets/images/favicon.png",
+  "productName": "Ember and Electron App",
   "files": [
     "build/**/*",
     "main.js"
@@ -316,7 +312,7 @@ app.on("activate", function () {
 }
 ```
 
-#### 14) Test drive your app
+#### 13) Test drive your app
 
 ```bash
 # Run your app
@@ -329,7 +325,7 @@ $ yarn electron-pack # or npm run electron-pack
 ### 💯 Result
 
 <div align="center">
-<img alt="Electron Aurelia Window Screeenshot" src="https://raw.githubusercontent.com/soulehshaikh99/assets/master/create-electron-framework-app/readme/png/create-aurelia-electron-app.png" />
+<img alt="Electron Ember Window Screeenshot" src="https://raw.githubusercontent.com/soulehshaikh99/assets/master/create-electron-framework-app/readme/png/create-ember-electron-app.png" />
 </div>
 
 <h3>😍 Made with ❤️ from Souleh</h3>
@@ -338,45 +334,4 @@ $ yarn electron-pack # or npm run electron-pack
 <br/>
 
 <h3>📋 License: </h3>
-Licensed under the <a href="https://github.com/soulehshaikh99/create-aurelia-electron-app/blob/master/LICENSE">MIT License</a>.
-
-gh repo clone https://github.com/ember-learn/super-rentals.git create-ember-electron-app
-git clone https://github.com/ember-learn/super-rentals.git create-ember-electron-app
-
-cd create-ember-electron-app
-
-yarn
-
-yarn add --dev electron electron-builder wait-on concurrently
-
-yarn add electron-serve
-
-fsutil file createnew main.js
-
-Download: favicon.png
-
-delete this entry from package.json as it collides with electron-builder configuration.
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
-
-add
-    "electron": "wait-on http://localhost:4200 && electron .",
-    "electron-dev": "concurrently \"yarn start\" \"yarn electron\"",
-    "preelectron-pack": "yarn build",
-    "electron-pack": "electron-builder"
-
-add 
-  "main": "main.js",
-  "build": {
-    "icon": "public/assets/images/favicon.png",
-    "productName": "Ember and Electron App",
-    "files": [
-      "build/**/*",
-      "main.js"
-    ]
-  },
-
-.ember-cli
-"output-path": "build"
+Licensed under the <a href="https://github.com/soulehshaikh99/create-ember-electron-app/blob/master/LICENSE">MIT License</a>.
